@@ -1,0 +1,24 @@
+<!--해당 테이블은 고객 데이터를 가져옵니다.-->
+<!-- 해당 폼은 고객 데이터를 수정합니다.-->
+<table>
+    <tr>
+        <td>고객 이름</td>
+        <td>수정할 고객 이름</td>
+        <td>주소</td>
+        <td>전화번호</td>
+        <td>이메일</td>
+    </tr>
+    {% for customer in customers %}
+        <tr>
+        <form action="/html/update" method="post">
+            <td><input type = "text", name = "origin_name" value="{{customer.name}}" readonly/></td>
+            <td><input type = "text", name = "name" value="{{customer.name}}" /></td>
+            <td><input type = "text", name = "home" value="{{customer.home}}"/></td>
+            <td><input type = "text", name = "call_num" value="{{customer.call_num}}"/></td>
+            <td><input type = "text", name = "email" value="{{customer.email}}"/></td>
+            <td><input type = "submit" value="수정"/> </td>
+        </form>
+        </tr> 
+
+    {% endfor %}
+</table>
